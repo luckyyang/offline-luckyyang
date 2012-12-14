@@ -1,0 +1,41 @@
+
+<%= form_for(@event) do |event_form| %>
+  <% if @event.errors.any? %>
+    <div class = 'alert alert-error' style="background-color:red; text-align:left; font-size:22px; padding: 30px;">
+      <%= @event.errors.full_messages.join('<br/>').html_safe %>
+    </div>
+  <% end %>
+
+<div>
+  <%= event_form.label :title, "活动名称" %><br/>
+  <%= event_form.text_field :title %>
+</div>
+
+<br />
+
+<div>
+  <%= event_form.label :time, "活动时间" %><br/>
+  <%= event_form.datetime_select :time,
+    :discard_hour => true,
+    :default => @default_time
+  %>
+</div>
+
+<br />
+
+<div>
+  <%= event_form.label :content, "活动内容" %><br/>
+  <%= event_form.text_area :content %>
+</div>
+
+<div>
+  <%= event_form.submit "创建!" %>
+</div>
+
+<br />
+
+<div>
+  <%= link_to "查看所有活动", events_path %>
+</div>
+
+<% end %>

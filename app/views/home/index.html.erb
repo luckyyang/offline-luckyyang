@@ -1,0 +1,31 @@
+<p>这里是学习的天堂，这里是帅哥的海洋</p>
+
+<p>
+We meet every sunday afternoon to talk about <b>Web development</b>, and have fun, join us, don't be shy.
+</p>
+
+<div>
+  <img src="../images/luckyyang.jpg" />
+</div>
+<div>
+  <%= link_to "Create New Event", new_event_path %><br />
+  <%= link_to "About Us", events_path %><br />
+  <%= link_to "Join Us", events_path %>
+</div>
+
+
+<div>
+  <h2>All Events</h2>
+  <% if !@events.nil? %>
+    <% @events.each do |event| %>
+      <ul>
+        <li>
+          <a href="/events/<%= event.id %>">
+            <i>event.time.to_date</i>
+            <h3>event.title</h3>
+          </a>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

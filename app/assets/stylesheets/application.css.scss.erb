@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+ $container-width: 960px;
+ $main-color: green;
+
+.navi {
+  margin-top: -1.4em;
+  color: white;
+  background-color: #C52F24;
+  height: 70px;
+
+  h1 {
+    color: white;
+    padding-top: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.handsome {
+  background: url(<%= asset_path 'luckyyang.jpg' %>) right 40px no-repeat;
+  min-height:240px;
+  padding: 20px 320px 20px 0;
+}
+
+.container {
+  width: 960px;
+  padding-left: 10em;
+}
+
+body {
+  margin: 0;
+  background: #FFF;
+  font-size: 14pt !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2{
+  color: #333;
+  border-radius: 150px;
+  background-color: #ddd; 
+  width: 200px;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+ul.home { 
+  list-style: none; 
+  li { 
+    vertical-align: middle; 
+    padding: 0.3em 0; 
+    border-bottom: 1px solid #ddd; 
+    cursor: pointer; 
+    i { 
+      display: inline-block; 
+      width: 120px; 
+      height: 30px; 
+      background-color: #000; 
+      float: left; 
+      text-align: center; 
+      vertical-align: middle; 
+      font-size: 1em; 
+      color: white; 
+      line-height: 30px; 
+      font-style: normal; 
+      font-weight: bold;
+      border-radius: 70px;
+      -webkit-transition: 0.10s background-color ease-in;
+      -moz-transition: 0.10s background-color ease-in;
+    }
+    h3 {
+      height: 30px;
+      margin: 0;
+      margin-left: 130px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-size: 26px;
+      color: $main-color;
+    }
+    &:hover {
+      i {
+        background-color: $main-color;
+        transition: 0.10s background-color ease-in;
+        -webkit-transition: 0.10s background-color ease-in;
+        -moz-transition: 0.10s background-color ease-in;
+      }
+      h3 {
+         text-decoration: underline;
+      }
+    }
+  }
+}
+

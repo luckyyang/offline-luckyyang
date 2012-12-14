@@ -1,0 +1,32 @@
+
+<div class="handsome">
+  <p>这里是学习的天堂，这里是帅哥的海洋</p>
+  <p>
+    <%= link_to "创建一个活动吧", new_event_path %>
+  </p>
+  <p>
+    <%= link_to "关于我们", events_path %>
+  </p>
+  <p>
+    <%= link_to "加入我们", events_path %>
+  </p>
+</div>
+
+
+<div>
+  <h2>所有活动</h2>
+  <% if !@events.nil? %>
+    <% @events.each do |event| %>
+      <ul class="home">
+        <li>
+          <a href="/events/<%= event.id %>">
+            <i><%= event.time.to_date %></i>
+            <h3><%= event.title %></h3>
+          </a>
+        </li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>No events found.</p>
+  <% end %>
+</div>

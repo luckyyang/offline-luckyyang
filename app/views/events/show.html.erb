@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <h2><%=@event.title %></h2>
+  <br/><%= @event.content %>
+</div> 
+
+<%= link_to "edit this event", edit_event_path(@event) %>
+|
+<%= link_to "list all events", root_path %>
+
+
